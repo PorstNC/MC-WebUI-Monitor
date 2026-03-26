@@ -26,6 +26,9 @@ Access the Web Page
 Open your browser and go to:http://localhost:5173
 Start the Game
 Use the buttons on the web page and follow the information prompts at the bottom.
+## Project Introduction
+Start the game and transmit through ffmpeg.exe, achieving monitoring with a fast MJPG stream. Refreshing images no longer causes flickering, providing web monitoring services (non-server-side) for users who cannot monitor the Minecraft client.
+
 ## Additional Notes
 If you encounter any bugs or issues, please provide feedback promptly.
 Thank you for using MC-WebUI-Monitor!
