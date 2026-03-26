@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Minecraft WebUI Monitor</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 40px; 
+  }
+  
+  .tip {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 11px;
+    background: rgba(0,0,0,0.5);
+    padding: 4px 10px;
+    border-radius: 4px;
+    text-align: center;
+    z-index: 999;
+    max-width: 90%;
+    line-height: 1.3;
+  }
+  #video {
+    width: 100%;
+    max-width: 1280px;
+    height: auto;
+    object-fit: contain;
+    background: #000;
+    margin-top: 10px;
+  }
+  #startBtn {
+    margin: 12px;
+    padding: 14px 30px;
+    background: #0066ff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  #startBtn:disabled {
+    background: #444;
+    cursor: not-allowed;
+  }
+</style>
+
+<button id="startBtn" onclick="startGame()">▶️ 启动游戏(Start Minecraft Game)</button>
+<img id="video" />
+
+
+<div class="tip">必须在5-10秒按下按钮启动游戏否则FFmpeg无法识别Minecraft窗口(You must press the button to start the game within 5-10 seconds, otherwise FFmpeg will not recognize the Minecraft window.)</div>
+
+<script>
+const btn = document.getElementById('startBtn');
+const video = document.getElementById('video');
+
+function startGame() {
+  btn.disabled = true;
+  btn.innerText = "⏳ 游戏启动中…(Game starting…)";
+
+  fetch('/start').then(() => {
+    setTimeout(() => {
+      video.src = `/stream?${Date.now()}`;
+    }, 18000);
+  });
+}
+</script>
