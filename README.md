@@ -21,7 +21,7 @@
 3.**游戏资源准备**
 
 使用你的 Minecraft 启动器下载版本（或任意包含 MOD 管理器的对应版本）。1.21.8
-将 文件夹下的 、 文件夹及游戏文件夹复制到 项目目录下。.minecraftassetslibraries1.21.8MC-WebUI-Monitor
+将 文件夹下的 、 文件夹及游戏文件夹复制到MC-WebUI-Monitor项目目录下。游戏文件包含:assets libraries 1.21.8
 注意：
 如果使用带 Mod 的版本，其文件夹名通常为 ，请重命名为 ！1.21.8-XXXXXX1.21.8
 
